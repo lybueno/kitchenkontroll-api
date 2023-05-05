@@ -26,6 +26,6 @@ public class Size {
     private Double multiplier;
 
     @OneToMany(mappedBy="size")
-    private List<PizzaBagItem> pizzaBagItems;
+    private List<Pizza> pizzas;
 
 }

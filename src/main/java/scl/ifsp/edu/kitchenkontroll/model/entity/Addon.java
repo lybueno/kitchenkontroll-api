@@ -22,7 +22,7 @@ public class Addon {
     private AddonType addonType;
 
     @ManyToMany(mappedBy = "addons")
-    private List<PizzaBagItem> pizzaBagItems;
+    private List<Pizza> pizzaBagItems;
 
     @Override
     public boolean equals(Object o) {

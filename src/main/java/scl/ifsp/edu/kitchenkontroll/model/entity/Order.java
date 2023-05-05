@@ -6,6 +6,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
+
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.*;
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,12 +21,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    private List<BagItem> bagItems;
+    @ManyToOne
+    @JoinColumn(name = "table_id")
+    private Table table;
 
-    public void updateOrderStatus(BagItem bagItem){
-        if(bagItems.contains(bagItem)){
-            bagItem.updateStatus();
-        }
+    private Status status;
+
+
+    public Double calculatePrice(){
+        return null;
     }
 }

@@ -1,0 +1,13 @@
+INSERT INTO addon(id, addon_type, name, price) VALUES ();
+
+INSERT INTO addon_pizza(addon_id, pizza_bag_item_id) VALUES ();
+
+INSERT INTO bag(id) VALUES ();
+
+INSERT INTO item (id, base_price, description, img_url, item_type, name) VALUES ();
+
+INSERT INTO item_pizza (item_id, pizza_bag_item_id) VALUES ();
+
+INSERT INTO order_bag_items (order_id, bag_items_id) VALUES ();
+
+INSERT INTO size (id, multiplier, size) VALUES ();

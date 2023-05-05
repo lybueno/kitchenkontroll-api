@@ -1,37 +1,36 @@
 package scl.ifsp.edu.kitchenkontroll.model.entity;
 
-import java.util.List;
+import jakarta.persistence.*;
+import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import scl.ifsp.edu.kitchenkontroll.model.enums.ItemType;
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.*;
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private ItemType itemType;
-    private String name;
-    private String description;
-    private Double basePrice;
-    private String imgUrl;
 
-    @OneToMany(mappedBy = "item")
-    private List<DrinkBagItem> drinkBagItems;
+    private float price;
 
-    @ManyToMany(mappedBy ="flavors")
-    private List<PizzaBagItem> pizzaBagItems;
+    @ManyToOne
+    @JoinColumn(name = "table_id")
+    private Table table;
+
+    private Status status;
+
+    public void updateStatus(){
+        if(status == REQUESTED){
+            status = PREPARING;
+        }
+        else if(status == PREPARING){
+            status = DONE;
+        }
+        else{
+            status = DELIVERED;
+        }
+    }
 }
