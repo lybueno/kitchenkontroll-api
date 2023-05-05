@@ -11,17 +11,13 @@ import java.util.List;
 @Entity
 public class Pizza extends Item {
 
-    @ManyToMany
-    @JoinTable(name = "items_pizza",
-            joinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "pizza_id",
-                    referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "pizzas")
     private List<ItemCardapio> flavors;
 
     @ManyToMany
     @JoinTable(name = "addons_pizza",
-            joinColumns = @JoinColumn(name = "addon_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "pizza_id",
+            joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "addon_id",
                     referencedColumnName = "id"))
     private List<Addon> addons;
 

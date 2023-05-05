@@ -28,9 +28,8 @@ public class ItemCardapio {
     private List<Drink> drinks;
 
     @ManyToMany
-    @JoinTable(name = "pizzas_itemCardapio",
-            joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "itemCardapio_id",
-                    referencedColumnName = "id"))
+    @JoinTable(name = "pizzas_item_cardapio",
+            joinColumns = @JoinColumn(name = "item_cardapio_id"),
+            inverseJoinColumns = @JoinColumn(name = "pizza_id"))
     private List<Pizza> pizzas;
 }
