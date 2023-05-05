@@ -6,8 +6,8 @@ import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
 import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.*;
 import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
-@Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+
+@MappedSuperclass
 public class Item {
 
     @Id

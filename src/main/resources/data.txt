@@ -1,33 +1,33 @@
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (1, 'Pizza', 'Calabresa', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (2, 'Pizza', 'Mussarela', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (3, 'Pizza', 'Strogonoff', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (4, 'Pizza', 'Rúcula', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (5, 'Pizza', 'Costelinha com Mostarda e Mel', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (6, 'Pizza', 'Quatro Queijos', 'descrição', 30.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (7, 'Drink', 'Coca Cola', 'descrição', 5.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (8, 'Drink', 'Doly', 'descrição', 5.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (9, 'Drink', 'Guaraná', 'descrição', 5.0, 'urlImagem');
---
--- INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
--- VALUES (10, 'Drink', 'Água', 'descrição', 3.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (1, 'Pizza', 'Calabresa', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (2, 'Pizza', 'Mussarela', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (3, 'Pizza', 'Strogonoff', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (4, 'Pizza', 'Rúcula', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (5, 'Pizza', 'Costelinha com Mostarda e Mel', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (6, 'Pizza', 'Quatro Queijos', 'descrição', 30.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (7, 'Drink', 'Coca Cola', 'descrição', 5.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (8, 'Drink', 'Doly', 'descrição', 5.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (9, 'Drink', 'Guaraná', 'descrição', 5.0, 'urlImagem');
+
+ INSERT INTO item_cardapio(id, itemType, name, description, basePrice, imgUrl)
+ VALUES (10, 'Drink', 'Água', 'descrição', 3.0, 'urlImagem');
 
 
 INSERT INTO ADDON("NAME", "PRICE", "ADDON_TYPE") VALUES ('Cheddar', 5.99, 2);

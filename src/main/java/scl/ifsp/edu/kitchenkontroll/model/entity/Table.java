@@ -18,9 +18,9 @@ public class Table {
     private Long id;
 
     @OneToMany(mappedBy = "table")
-    private List<Item> cart;
+    private List<Pizza> pizzas;
 
     @OneToMany(mappedBy = "table")
-    private List<Order> orders;
+    private List<Drink> drinks;
 
 }
