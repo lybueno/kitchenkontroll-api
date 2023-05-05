@@ -7,27 +7,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import scl.ifsp.edu.kitchenkontroll.model.entity.Size;
-import scl.ifsp.edu.kitchenkontroll.service.SizeService;
+import scl.ifsp.edu.kitchenkontroll.model.entity.Table;
+import scl.ifsp.edu.kitchenkontroll.service.TableService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/sizes")
-public class SizeController {
+@RequestMapping(value = "/tables")
+public class TableController {
 
     @Autowired
-    private SizeService service;
+    private TableService service;
 
     @GetMapping
-    public ResponseEntity<List<Size>> getAll(){
-        List<Size> list = service.findAll();
+    public ResponseEntity<List<Table>> getAll(){
+        List<Table> list = service.findAll();
         return  ResponseEntity.ok().body(list);
     }
 
     @GetMapping("/paged")
-    public ResponseEntity<Page<Size>> getAllPaged(Pageable pageable){
-        Page<Size> list = service.findAllPaged(pageable);
+    public ResponseEntity<Page<Table>> getAllPaged(Pageable pageable){
+        Page<Table> list = service.findAllPaged(pageable);
         return  ResponseEntity.ok().body(list);
     }
 }

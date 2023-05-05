@@ -1,6 +1,8 @@
 package scl.ifsp.edu.kitchenkontroll.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +21,13 @@ public class AddonController {
 
     @GetMapping
     public ResponseEntity<List<Addon>> getAll(){
-        return null;
+        List<Addon> addons = addonService.findAll();
+        return  ResponseEntity.ok().body(addons);
+    }
+
+    @GetMapping("/paged")
+    public ResponseEntity<Page<Addon>> getAllPaged(Pageable pageable){
+        Page<Addon> addons = addonService.findAllPaged(pageable);
+        return  ResponseEntity.ok().body(addons);
     }
 }

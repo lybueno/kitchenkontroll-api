@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,6 +24,7 @@ public class Addon {
 
     @ManyToMany(mappedBy = "addons")
     private List<Pizza> pizzaBagItems;
+
 
     @Override
     public boolean equals(Object o) {
