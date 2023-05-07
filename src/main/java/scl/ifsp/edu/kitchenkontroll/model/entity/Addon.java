@@ -1,5 +1,6 @@
 package scl.ifsp.edu.kitchenkontroll.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -22,6 +23,7 @@ public class Addon {
     private float price;
     private AddonType addonType;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "addons")
     private List<Pizza> pizzaBagItems;
 

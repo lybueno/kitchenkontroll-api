@@ -1,5 +1,6 @@
 package scl.ifsp.edu.kitchenkontroll.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import scl.ifsp.edu.kitchenkontroll.model.enums.ItemType;
 
@@ -24,9 +25,11 @@ public class ItemCardapio {
     private Double basePrice;
     private String imgUrl;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "item")
     private List<Drink> drinks;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "pizzas_item_cardapio",
             joinColumns = @JoinColumn(name = "item_cardapio_id"),

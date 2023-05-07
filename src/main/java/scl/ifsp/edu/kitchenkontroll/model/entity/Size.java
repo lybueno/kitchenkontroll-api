@@ -2,6 +2,7 @@ package scl.ifsp.edu.kitchenkontroll.model.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Size {
     private SizeLabel size;
     private Double multiplier;
 
+    @JsonIgnore
     @OneToMany(mappedBy="size")
     private List<Pizza> pizzas;
 

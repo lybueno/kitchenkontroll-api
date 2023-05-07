@@ -1,15 +1,34 @@
 package scl.ifsp.edu.kitchenkontroll.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 import scl.ifsp.edu.kitchenkontroll.model.enums.AddonType;
+import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
 import scl.ifsp.edu.kitchenkontroll.model.utils.exceptions.FlavorLimitReachedException;
 
 
 import java.util.List;
 
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.*;
+import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
+@Data
 @Entity
-public class Pizza extends Item {
+public class Pizza {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "table_id")
+    private Table table;
+
+    private Long tableNumber;
+
+    private float price;
 
     @ManyToMany(mappedBy = "pizzas")
     private List<ItemCardapio> flavors;
@@ -24,6 +43,20 @@ public class Pizza extends Item {
     @ManyToOne
     @JoinColumn(name = "size_id")
     private Size size;
+
+    private Status status;
+
+    public void updateStatus(){
+        if(status == REQUESTED){
+            status = PREPARING;
+        }
+        else if(status == PREPARING){
+            status = DONE;
+        }
+        else{
+            status = DELIVERED;
+        }
+    }
 
 
     public void addAddon(Addon addon){
@@ -64,6 +97,5 @@ public class Pizza extends Item {
             return true;
         return false;
     }
-
 
 }
