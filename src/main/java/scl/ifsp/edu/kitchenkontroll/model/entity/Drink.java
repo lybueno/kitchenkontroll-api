@@ -16,7 +16,7 @@ public class Drink {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private float price;
+    private Double price;
 
     @JsonIgnore
     @ManyToOne
