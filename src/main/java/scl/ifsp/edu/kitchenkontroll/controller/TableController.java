@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import scl.ifsp.edu.kitchenkontroll.model.dto.PizzaDto;
 import scl.ifsp.edu.kitchenkontroll.model.entity.Table;
 import scl.ifsp.edu.kitchenkontroll.service.TableService;
 
@@ -32,5 +30,13 @@ public class TableController {
         Page<Table> list = service.findAllPaged(pageable);
         return  ResponseEntity.ok().body(list);
     }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Table> findById(@PathVariable Long id) {
+        Table table = service.findById(id);
+        return ResponseEntity.ok().body(table);
+    }
+
+    // TODO: fazer requisição para create, update e delete
 
 }

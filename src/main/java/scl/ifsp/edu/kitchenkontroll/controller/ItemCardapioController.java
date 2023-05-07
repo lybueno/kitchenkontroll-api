@@ -32,4 +32,6 @@ public class ItemCardapioController {
         Page<ItemCardapio> list = service.findAllPaged(pageable);
         return  ResponseEntity.ok().body(list);
     }
+
+    // TODO: fazer por id, update e delete, create
 }

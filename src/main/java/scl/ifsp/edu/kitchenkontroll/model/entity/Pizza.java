@@ -28,7 +28,7 @@ public class Pizza {
 
     private Long tableNumber;
 
-    private float price;
+    private Double price;
 
     @ManyToMany(mappedBy = "pizzas")
     private List<ItemCardapio> flavors;
