@@ -33,5 +33,17 @@ public class ItemCardapioController {
         return  ResponseEntity.ok().body(list);
     }
 
+    @GetMapping(value = "/on-sale")
+    public ResponseEntity<List<ItemCardapio>> getAllOnSale(){
+        List<ItemCardapio> list = service.findAllByType();
+        return  ResponseEntity.ok().body(list);
+    }
+
+    @GetMapping("/on-sale/paged")
+    public ResponseEntity<Page<ItemCardapio>> getAllOnSalePaged(Pageable pageable){
+        Page<ItemCardapio> list = service.findAllByTypePaged(pageable);
+        return  ResponseEntity.ok().body(list);
+    }
+
     // TODO: fazer por id, update e delete, create
 }

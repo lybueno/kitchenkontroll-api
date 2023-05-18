@@ -30,4 +30,16 @@ public class ItemCardapioService {
         return list.map(x -> new ItemCardapio(x.getId(), x.getItemType(), x.getName(), x.getDescription(),
                 x.getBasePrice(), x.getImgUrl(), x.getDrinks(), x.getPizzas()));
     }
+
+    public List<ItemCardapio> findAllByType() {
+        List<ItemCardapio> list = repository.findAllByTypeOnSale();
+        return list;
+    }
+
+    public Page<ItemCardapio> findAllByTypePaged(Pageable pageable) {
+        Page<ItemCardapio> list =  repository.findAllByTypeOnSale(pageable);
+
+        return list.map(x -> new ItemCardapio(x.getId(), x.getItemType(), x.getName(), x.getDescription(),
+                x.getBasePrice(), x.getImgUrl(), x.getDrinks(), x.getPizzas()));
+    }
 }

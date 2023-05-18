@@ -19,6 +19,10 @@ INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url)
 INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (8, 1, 'Doly', 'descrição', 5.0, 'urlImagem');
 INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (9, 1, 'Guaraná', 'descrição', 5.0, 'urlImagem');
 INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (10, 1, 'Água', 'descrição', 3.0, 'urlImagem');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (11, 2, 'Marguerita',
+                                                                                         'descrição', 20.0, 'urlImagem');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (12, 2, 'Frango com ' ||
+                                                                                                'Catupiry', 'descrição', 20.0, 'urlImagem');
 
 
 INSERT INTO size(id, size, multiplier) VALUES (1, 2, 2);
