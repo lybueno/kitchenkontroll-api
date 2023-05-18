@@ -36,7 +36,7 @@ INSERT INTO drink(id, price, table_id, status, item_cardapio_id, delivery_prefer
                                                                                                            true, 1);
 
 INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(1, 60, 1, 1, 1, 1);
-INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(2, 60, 1, 1, 2, 1);
+INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(2, 60, 1, 0, 2, 1);
 INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(3, 60, 1, 2, 3, 1);
 INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(4, 60, 2, 3, 1, 2);
 
