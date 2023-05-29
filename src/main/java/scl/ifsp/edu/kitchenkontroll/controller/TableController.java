@@ -37,6 +37,12 @@ public class TableController {
         return ResponseEntity.ok().body(table);
     }
 
+    @PutMapping
+    public ResponseEntity<Table> update(@RequestBody Table table){
+        service.update(table);
+        return ResponseEntity.ok().body(table);
+    }
+
     // TODO: fazer requisição para create, update e delete
 
 }

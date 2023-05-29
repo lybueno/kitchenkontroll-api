@@ -30,19 +30,19 @@ INSERT INTO size(id, size, multiplier) VALUES (2, 1 , 1);
 INSERT INTO size(id, size, multiplier) VALUES (3, 0, 0.5);
 
 INSERT INTO drink(id, price, table_id, status, item_cardapio_id, delivery_preference, table_number) VALUES(1, 5.99,
-                                                                                                           1, 1, 7,
+                                                                                                           1, 4, 7,
                                                                                                            true, 1);
 INSERT INTO drink(id, price, table_id, status, item_cardapio_id, delivery_preference, table_number) VALUES(2, 5.99,
-                                                                                                           1, 3, 8,
+                                                                                                           1, 4, 8,
                                                                                                            false, 1);
 INSERT INTO drink(id, price, table_id, status, item_cardapio_id, delivery_preference, table_number) VALUES(3, 5.99,
-                                                                                                           1, 2, 9,
+                                                                                                           1, 4, 9,
                                                                                                            true, 1);
 
-INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(1, 60, 1, 1, 1, 1);
-INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(2, 60, 1, 0, 2, 1);
-INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(3, 60, 1, 2, 3, 1);
-INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(4, 60, 2, 3, 1, 2);
+INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(1, 60, 1, 4, 1, 1);
+INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(2, 60, 1, 4, 2, 1);
+INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(3, 60, 1, 4, 3, 1);
+INSERT INTO pizza(id, price, table_id, status, size_id, table_number) VALUES(4, 60, 2, 4, 1, 2);
 
 INSERT INTO ADDONS_PIZZA(ADDON_ID, PIZZA_ID) VALUES(1, 1);
 INSERT INTO ADDONS_PIZZA(ADDON_ID, PIZZA_ID) VALUES(1, 2);

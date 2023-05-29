@@ -60,4 +60,16 @@ public class TableService {
         Table entity = obj.orElseThrow(() -> new ResourceNotFoundException("Table not found."));
         return entity;
     }
+
+    @Transactional(readOnly = false)
+    public void update(Table table){
+        if (verifyTable(table))
+            tableRepository.save(table);
+    }
+
+    boolean verifyTable(Table table){
+        Optional<Table> obj = tableRepository.findById(table.getId());
+        obj.orElseThrow(() -> new ResourceNotFoundException("Table not found."));
+        return true;
+    }
 }
