@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import scl.ifsp.edu.kitchenkontroll.model.dto.ItemCardapioDto;
+import scl.ifsp.edu.kitchenkontroll.model.dto.PizzaDto;
 import scl.ifsp.edu.kitchenkontroll.model.entity.ItemCardapio;
 import scl.ifsp.edu.kitchenkontroll.service.ItemCardapioService;
 
+import java.net.URI;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -45,5 +46,29 @@ public class ItemCardapioController {
         return  ResponseEntity.ok().body(list);
     }
 
-    // TODO: fazer por id, update e delete, create
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<ItemCardapioDto> findById(@PathVariable Long id) {
+        ItemCardapioDto dto = service.findById(id);
+        return ResponseEntity.ok().body(dto);
+    }
+
+    @PostMapping
+    public ResponseEntity<ItemCardapioDto> insert(@RequestBody ItemCardapioDto dto){
+        dto = service.insert(dto);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+                .buildAndExpand(dto.getId()).toUri();
+        return ResponseEntity.created(uri).body(dto);
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<ItemCardapioDto> updateStatus(@PathVariable Long id, @RequestBody ItemCardapioDto dto){
+        dto = service.update(id, dto);
+        return ResponseEntity.ok().body(dto);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
