@@ -11,6 +11,7 @@ import scl.ifsp.edu.kitchenkontroll.model.dto.PizzaDto;
 import scl.ifsp.edu.kitchenkontroll.model.entity.Addon;
 import scl.ifsp.edu.kitchenkontroll.model.entity.ItemCardapio;
 import scl.ifsp.edu.kitchenkontroll.model.entity.Pizza;
+import scl.ifsp.edu.kitchenkontroll.model.entity.Table;
 import scl.ifsp.edu.kitchenkontroll.model.utils.exceptions.DataBaseException;
 import scl.ifsp.edu.kitchenkontroll.model.utils.exceptions.ResourceNotFoundException;
 import scl.ifsp.edu.kitchenkontroll.repository.AddonRepository;
@@ -32,6 +33,9 @@ public class PizzaService {
 
     @Autowired
     private AddonRepository addonRepository;
+
+    @Autowired
+    private TableService tableService;
 
     @Transactional(readOnly = true)
     public List<PizzaDto> findAll(){
@@ -84,9 +88,14 @@ public class PizzaService {
 
     public void copyDtoToEntity(PizzaDto dto, Pizza entity){
         entity.setTableNumber(dto.getTable_id());
+        Table dtoTable = tableService.findById(entity.getTableNumber());
+        entity.setTable(dtoTable);
         entity.setStatus(dto.getStatus());
         entity.setSize(dto.getSize());
         entity.setPrice(dto.getPrice());
+        entity.setFlavors(dto.getFlavors());
+        entity.setAddons(dto.getAddons());
+
 
         entity.getFlavors().clear();
         for(ItemCardapio flavor : dto.getFlavors()){
