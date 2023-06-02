@@ -3,6 +3,7 @@ package scl.ifsp.edu.kitchenkontroll.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 import scl.ifsp.edu.kitchenkontroll.model.enums.AddonType;
 import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
 import scl.ifsp.edu.kitchenkontroll.model.utils.exceptions.FlavorLimitReachedException;
@@ -15,6 +16,7 @@ import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
 @Data
 @Entity
+@ToString
 public class Pizza {
 
     @Id

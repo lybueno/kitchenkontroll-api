@@ -22,8 +22,8 @@ public class PizzaController {
 
     @GetMapping
     public ResponseEntity<List<PizzaDto>> findAll(){
-        List<PizzaDto> addons = service.findAll();
-        return  ResponseEntity.ok().body(addons);
+        List<PizzaDto> pizzas = service.findAll();
+        return  ResponseEntity.ok().body(pizzas);
     }
 
     @GetMapping("/paged")

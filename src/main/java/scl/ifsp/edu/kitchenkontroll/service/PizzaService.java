@@ -61,6 +61,8 @@ public class PizzaService {
     public PizzaDto insert(PizzaDto dto){
         Pizza entity = new Pizza();
         copyDtoToEntity(dto, entity);
+        System.out.println(entity.getFlavors());
+        System.out.println(entity.getAddons());
         Long id = repository.findLastId() + 1;
         entity.setId(id);
         repository.insertPizza(entity);

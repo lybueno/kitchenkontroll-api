@@ -2,6 +2,7 @@ package scl.ifsp.edu.kitchenkontroll.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.ToString;
 import scl.ifsp.edu.kitchenkontroll.model.enums.ItemType;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
+@ToString
 public class ItemCardapio {
 
     @Id
