@@ -45,8 +45,8 @@ public class PizzaDto {
 
     public PizzaDto(Pizza entity, List<ItemCardapio> flavors, List<Addon> addons){
         this(entity);
-        flavors.forEach(flavor -> this.flavors.add(flavor));
-        addons.forEach(addon -> this.addons.add(addon));
+        this.flavors.addAll(flavors);
+        this.addons.addAll(addons);
     }
 
     @Override

@@ -53,6 +53,7 @@ public class PizzaService {
     public PizzaDto findById(Long id){
        Optional<Pizza> obj = repository.findById(id);
        Pizza entity = obj.orElseThrow(() -> new ResourceNotFoundException("Pizza not found."));
+       System.out.println(entity);
        return new PizzaDto(entity, entity.getFlavors(), entity.getAddons());
     }
 
@@ -60,7 +61,13 @@ public class PizzaService {
     public PizzaDto insert(PizzaDto dto){
         Pizza entity = new Pizza();
         copyDtoToEntity(dto, entity);
-        entity = repository.save(entity);
+        Long id = repository.findLastId() + 1;
+        entity.setId(id);
+        repository.insertPizza(entity);
+        for(ItemCardapio item : entity.getFlavors())
+            repository.insertPizzaInItemCardapio(entity, item);
+        for(Addon addon : entity.getAddons())
+            repository.insertPizzaInAddons(entity, addon);
         return new PizzaDto(entity);
     }
 
@@ -90,12 +97,12 @@ public class PizzaService {
         entity.setTableNumber(dto.getTable_id());
         Table dtoTable = tableService.findById(entity.getTableNumber());
         entity.setTable(dtoTable);
+        entity.setTableNumber(dtoTable.getId());
         entity.setStatus(dto.getStatus());
         entity.setSize(dto.getSize());
         entity.setPrice(dto.getPrice());
         entity.setFlavors(dto.getFlavors());
         entity.setAddons(dto.getAddons());
-        System.out.println(entity);
     }
 
 }
