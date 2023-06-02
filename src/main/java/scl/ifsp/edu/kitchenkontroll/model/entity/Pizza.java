@@ -2,8 +2,7 @@ package scl.ifsp.edu.kitchenkontroll.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import scl.ifsp.edu.kitchenkontroll.model.enums.AddonType;
 import scl.ifsp.edu.kitchenkontroll.model.enums.Status;
 import scl.ifsp.edu.kitchenkontroll.model.utils.exceptions.FlavorLimitReachedException;
@@ -14,9 +13,11 @@ import java.util.List;
 import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.*;
 import static scl.ifsp.edu.kitchenkontroll.model.enums.Status.DELIVERED;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@ToString
 public class Pizza {
 
     @Id
@@ -32,7 +33,10 @@ public class Pizza {
 
     private Double price;
 
-    @ManyToMany(mappedBy = "pizzas")
+    @ManyToMany
+    @JoinTable(name = "pizzas_item_cardapio",
+            joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "item_cardapio_id", referencedColumnName = "id"))
     private List<ItemCardapio> flavors;
 
     @ManyToMany

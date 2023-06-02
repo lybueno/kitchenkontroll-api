@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
-@ToString
 public class ItemCardapio {
 
     @Id
@@ -32,9 +31,6 @@ public class ItemCardapio {
     private List<Drink> drinks;
 
     @JsonIgnore
-    @ManyToMany
-    @JoinTable(name = "pizzas_item_cardapio",
-            joinColumns = @JoinColumn(name = "item_cardapio_id"),
-            inverseJoinColumns = @JoinColumn(name = "pizza_id"))
+    @ManyToMany(mappedBy = "flavors")
     private List<Pizza> pizzas;
 }

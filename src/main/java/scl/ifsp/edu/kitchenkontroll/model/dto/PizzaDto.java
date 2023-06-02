@@ -41,8 +41,6 @@ public class PizzaDto {
         this.status = entity.getStatus();
         this.price = entity.getPrice();
         this.size = entity.getSize();
-        this.flavors = entity.getFlavors();
-        this.addons = entity.getAddons();
     }
 
     public PizzaDto(Pizza entity, List<ItemCardapio> flavors, List<Addon> addons){

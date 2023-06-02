@@ -53,7 +53,6 @@ public class PizzaService {
     public PizzaDto findById(Long id){
        Optional<Pizza> obj = repository.findById(id);
        Pizza entity = obj.orElseThrow(() -> new ResourceNotFoundException("Pizza not found."));
-       System.out.println(entity);
        return new PizzaDto(entity, entity.getFlavors(), entity.getAddons());
     }
 
@@ -70,7 +69,7 @@ public class PizzaService {
             repository.insertPizzaInItemCardapio(entity, item);
         for(Addon addon : entity.getAddons())
             repository.insertPizzaInAddons(entity, addon);
-        return new PizzaDto(entity);
+        return new PizzaDto(entity, entity.getFlavors(), entity.getAddons());
     }
 
     @Transactional
