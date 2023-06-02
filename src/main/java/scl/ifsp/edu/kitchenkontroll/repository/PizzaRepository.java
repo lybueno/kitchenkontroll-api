@@ -25,7 +25,7 @@ public interface PizzaRepository extends JpaRepository<Pizza, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT into PIZZAS_ITEM_CARDAPIO (PIZZA_ID, ITEM_CARDAPIO_ID) VALUES (:#{#item.id}, :#{#entity.id})", nativeQuery = true)
+    @Query(value = "INSERT into PIZZAS_ITEM_CARDAPIO (ITEM_CARDAPIO_ID, PIZZA_ID) VALUES (:#{#item.id}, :#{#entity.id})", nativeQuery = true)
     void insertPizzaInItemCardapio(@Param("entity")Pizza entity, @Param("item")ItemCardapio item);
 
     @Query("select max(id) from Pizza")
