@@ -95,22 +95,7 @@ public class PizzaService {
         entity.setPrice(dto.getPrice());
         entity.setFlavors(dto.getFlavors());
         entity.setAddons(dto.getAddons());
-
-
-        entity.getFlavors().clear();
-        for(ItemCardapio flavor : dto.getFlavors()){
-            Optional<ItemCardapio> obj = itemCardapioRepository.findById(flavor.getId());
-            ItemCardapio item = obj.orElseThrow(() -> new ResourceNotFoundException("Flavor not found."));
-            entity.getFlavors().add(item);
-        }
-
-        entity.getAddons().clear();
-        for(Addon addon : dto.getAddons()){
-            Optional<Addon> obj = addonRepository.findById(addon.getId());
-            Addon item = obj.orElseThrow(() -> new ResourceNotFoundException("Addon note found."));
-            entity.getAddons().add(item);
-        }
-
+        System.out.println(entity);
     }
 
 }
