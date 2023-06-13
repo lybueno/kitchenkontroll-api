@@ -62,7 +62,10 @@ public class ItemCardapioService {
     public ItemCardapioDto insert(ItemCardapioDto dto){
         ItemCardapio entity = new ItemCardapio();
         copyDtoToEntity(dto, entity);
-        entity = repository.save(entity);
+        Long lastId = repository.findLastId();
+        Long id = lastId + 1;
+        entity.setId(id);
+        repository.insertItemCardapio(entity);
         return new ItemCardapioDto(entity);
     }
 
@@ -96,5 +99,6 @@ public class ItemCardapioService {
         entity.setBasePrice(dto.getBasePrice());
         entity.setImgUrl(dto.getImgUrl());
         entity.setItemType(dto.getItemType());
+        entity.setDescription(dto.getDescription());
     }
 }
