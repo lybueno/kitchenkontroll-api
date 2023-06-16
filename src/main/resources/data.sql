@@ -9,20 +9,20 @@ INSERT INTO tb_table(id) VALUES (2);
 INSERT INTO tb_table(id) VALUES (3);
 
 
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (1, 0, 'Calabresa', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (2, 0, 'Mussarela', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (3, 0, 'Strogonoff', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (4, 0, 'Rúcula', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (5, 0, 'Costelinha com Mostarda e Mel', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (6, 0, 'Quatro Queijos', 'descrição', 30.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (7, 1, 'Coca Cola', 'descrição', 5.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (8, 1, 'Doly', 'descrição', 5.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (9, 1, 'Guaraná', 'descrição', 5.0, 'urlImagem');
-INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (10, 1, 'Água', 'descrição', 3.0, 'urlImagem');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (1, 0, 'Calabresa', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (2, 0, 'Mussarela', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (3, 0, 'Strogonoff', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (4, 0, 'Rúcula', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (5, 0, 'Costelinha com Mostarda e Mel', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (6, 0, 'Quatro Queijos', 'descrição', 30.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (7, 1, 'Coca Cola', 'descrição', 5.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (8, 1, 'Doly', 'descrição', 5.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (9, 1, 'Guaraná', 'descrição', 5.0, 'VISIBLE');
+INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (10, 1, 'Água', 'descrição', 3.0, 'VISIBLE');
 INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (11, 2, 'Marguerita',
-                                                                                         'descrição', 20.0, 'urlImagem');
+                                                                                         'descrição', 20.0, 'VISIBLE');
 INSERT INTO item_cardapio(id, item_type, name, description, base_price, img_url) VALUES (12, 2, 'Frango com ' ||
-                                                                                                'Catupiry', 'descrição', 20.0, 'urlImagem');
+                                                                                                'Catupiry', 'descrição', 20.0, 'VISIBLE');
 
 
 INSERT INTO size(id, size, multiplier) VALUES (1, 2, 2);
